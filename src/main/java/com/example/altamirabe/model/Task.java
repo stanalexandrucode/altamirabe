@@ -30,21 +30,20 @@ public class Task {
 
     private int numberOfDaysRemaining;
 
-    private LocalDateTime localDateTime;
+    private LocalDateTime taskCreatedAt;
 
-    public Task(Long id, String tipTask, String name, String durataLimita, String durataEstimata, int numberOfDaysRemaining, LocalDateTime localDateTime) {
+    public Task(Long id, String tipTask, String name, String durataLimita, String durataEstimata, int numberOfDaysRemaining, LocalDateTime taskCreatedAt) {
         this.id = id;
         this.tipTask = tipTask;
         this.name = name;
         this.durataLimita = durataLimita;
         this.durataEstimata = durataEstimata;
         this.numberOfDaysRemaining = numberOfDaysRemaining;
-        this.localDateTime = localDateTime;
+        this.taskCreatedAt = taskCreatedAt;
     }
 
     public Task() {
     }
-
 
     public Long getId() {
         return id;
@@ -94,11 +93,24 @@ public class Task {
         this.numberOfDaysRemaining = numberOfDaysRemaining;
     }
 
-    public LocalDateTime getLocalDateTime() {
-        return localDateTime;
+    public LocalDateTime getTaskCreatedAt() {
+        return taskCreatedAt;
     }
 
-    public void setLocalDateTime(LocalDateTime localDateTime) {
-        this.localDateTime = localDateTime;
+    public void setTaskCreatedAt(LocalDateTime taskCreatedAt) {
+        this.taskCreatedAt = taskCreatedAt;
+    }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "id=" + id +
+                ", tipTask='" + tipTask + '\'' +
+                ", name='" + name + '\'' +
+                ", durataLimita='" + durataLimita + '\'' +
+                ", durataEstimata='" + durataEstimata + '\'' +
+                ", numberOfDaysRemaining=" + numberOfDaysRemaining +
+                ", taskCreatedAt=" + taskCreatedAt +
+                '}';
     }
 }
