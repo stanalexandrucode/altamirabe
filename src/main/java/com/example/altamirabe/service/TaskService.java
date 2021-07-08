@@ -22,6 +22,7 @@ public class TaskService {
 
     @Transactional
     public void addTask(TaskDto taskDto) {
+
         Task task = new Task();
         task.setTipTask(taskDto.getTipTask());
         task.setName(taskDto.getName());
