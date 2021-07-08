@@ -1,6 +1,7 @@
 package com.example.altamirabe.controller;
 
 
+import com.example.altamirabe.dto.NrOfDays;
 import com.example.altamirabe.dto.TaskDto;
 import com.example.altamirabe.model.Task;
 import com.example.altamirabe.service.TaskService;
@@ -25,14 +26,26 @@ public class TaskController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<Void> addNewCartProduct(@RequestBody TaskDto taskDto) {
+    public ResponseEntity<Void> addNewTask(@RequestBody TaskDto taskDto) {
         taskService.addTask(taskDto);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @GetMapping("/getAll")
-    public ResponseEntity<List<Task>> getAllTasks(){
+    public ResponseEntity<List<Task>> getAllTasks() {
         List<Task> tasks = taskService.getAllTasks();
         return new ResponseEntity<>(tasks, OK);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Void> deleteTask(@PathVariable("id") Long id) {
+        taskService.deleteTask(id);
+        return new ResponseEntity<>(OK);
+    }
+
+    @PostMapping("/update/{id}")
+    public ResponseEntity<Task> addNewUser(@RequestBody NrOfDays nrOfDays, @PathVariable("id") Long id) {
+        Task task = taskService.updateTask(nrOfDays, id);
+        return new ResponseEntity<>(task, OK);
     }
 }

@@ -32,7 +32,13 @@ public class Task {
 
     private LocalDateTime taskCreatedAt;
 
-    public Task(Long id, String tipTask, String name, String durataLimita, String durataEstimata, int numberOfDaysRemaining, LocalDateTime taskCreatedAt) {
+    private LocalDateTime completedAt;
+
+    private int dayTakenToComplete;
+
+    private boolean isCompleted;
+
+    public Task(Long id, String tipTask, String name, String durataLimita, String durataEstimata, int numberOfDaysRemaining, LocalDateTime taskCreatedAt, LocalDateTime completedAt, int dayTakenToComplete, boolean isCompleted) {
         this.id = id;
         this.tipTask = tipTask;
         this.name = name;
@@ -40,6 +46,9 @@ public class Task {
         this.durataEstimata = durataEstimata;
         this.numberOfDaysRemaining = numberOfDaysRemaining;
         this.taskCreatedAt = taskCreatedAt;
+        this.completedAt = completedAt;
+        this.dayTakenToComplete = dayTakenToComplete;
+        this.isCompleted = isCompleted;
     }
 
     public Task() {
@@ -101,6 +110,30 @@ public class Task {
         this.taskCreatedAt = taskCreatedAt;
     }
 
+    public LocalDateTime getCompletedAt() {
+        return completedAt;
+    }
+
+    public void setCompletedAt(LocalDateTime completedAt) {
+        this.completedAt = completedAt;
+    }
+
+    public int getDayTakenToComplete() {
+        return dayTakenToComplete;
+    }
+
+    public void setDayTakenToComplete(int dayTakenToComplete) {
+        this.dayTakenToComplete = dayTakenToComplete;
+    }
+
+    public boolean isCompleted() {
+        return isCompleted;
+    }
+
+    public void setCompleted(boolean completed) {
+        isCompleted = completed;
+    }
+
     @Override
     public String toString() {
         return "Task{" +
@@ -111,6 +144,9 @@ public class Task {
                 ", durataEstimata='" + durataEstimata + '\'' +
                 ", numberOfDaysRemaining=" + numberOfDaysRemaining +
                 ", taskCreatedAt=" + taskCreatedAt +
+                ", completedAt=" + completedAt +
+                ", dayTakenToComplete=" + dayTakenToComplete +
+                ", isCompleted=" + isCompleted +
                 '}';
     }
 }

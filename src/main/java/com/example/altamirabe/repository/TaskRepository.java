@@ -6,4 +6,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface TaskRepository extends JpaRepository<Task, Long> {
+    void deleteTasksById(Long id);
+
+    Task findTaskById(Long id);
 }
