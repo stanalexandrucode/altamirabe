@@ -30,7 +30,6 @@ public class TaskController {
     @PostMapping("/add")
     public ResponseEntity<Void> addNewTask(@RequestBody TaskDto taskDto) throws TimeExpiredException, TimeEstimatedException {
         taskService.addTask(taskDto);
-        System.out.println(taskDto.getTimeLimit());
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
