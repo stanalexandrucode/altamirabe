@@ -3,6 +3,8 @@ package com.example.altamirabe.controller;
 
 import com.example.altamirabe.dto.NrOfDays;
 import com.example.altamirabe.dto.TaskDto;
+import com.example.altamirabe.exceptions.TimeEstimatedException;
+import com.example.altamirabe.exceptions.TimeExpiredException;
 import com.example.altamirabe.model.Task;
 import com.example.altamirabe.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +28,9 @@ public class TaskController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<Void> addNewTask(@RequestBody TaskDto taskDto) {
+    public ResponseEntity<Void> addNewTask(@RequestBody TaskDto taskDto) throws TimeExpiredException, TimeEstimatedException {
         taskService.addTask(taskDto);
+        System.out.println(taskDto.getTimeLimit());
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
