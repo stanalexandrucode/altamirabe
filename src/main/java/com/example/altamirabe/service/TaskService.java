@@ -23,11 +23,12 @@ public class TaskService {
     @Transactional
     public void addTask(TaskDto taskDto) {
 
+
         Task task = new Task();
-        task.setTipTask(taskDto.getTipTask());
+        task.setTypeTask(taskDto.getTypeTask());
         task.setName(taskDto.getName());
-        task.setDurataLimita(taskDto.getDurataLimita());
-        task.setDurataEstimata(taskDto.getDurataEstimata());
+        task.setTimeLimit(taskDto.getTimeLimit());
+        task.setEstimatedTime(taskDto.getEstimatedTime());
         task.setTaskCreatedAt(LocalDateTime.now());
         task.setCompleted(false);
         taskRepository.save(task);
@@ -52,4 +53,5 @@ public class TaskService {
         return currentTask;
 
     }
+
 }

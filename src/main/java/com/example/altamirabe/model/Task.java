@@ -20,13 +20,13 @@ public class Task {
     @Column(name = "id")
     private Long id;
 
-    private String tipTask;
+    private String typeTask;
 
     private String name;
 
-    private String durataLimita;
+    private String timeLimit;
 
-    private String durataEstimata;
+    private String estimatedTime;
 
     private int numberOfDaysRemaining;
 
@@ -38,12 +38,12 @@ public class Task {
 
     private boolean isCompleted;
 
-    public Task(Long id, String tipTask, String name, String durataLimita, String durataEstimata, int numberOfDaysRemaining, LocalDateTime taskCreatedAt, LocalDateTime completedAt, int dayTakenToComplete, boolean isCompleted) {
+    public Task(Long id, String typeTask, String name, String timeLimit, String estimatedTime, int numberOfDaysRemaining, LocalDateTime taskCreatedAt, LocalDateTime completedAt, int dayTakenToComplete, boolean isCompleted) {
         this.id = id;
-        this.tipTask = tipTask;
+        this.typeTask = typeTask;
         this.name = name;
-        this.durataLimita = durataLimita;
-        this.durataEstimata = durataEstimata;
+        this.timeLimit = timeLimit;
+        this.estimatedTime = estimatedTime;
         this.numberOfDaysRemaining = numberOfDaysRemaining;
         this.taskCreatedAt = taskCreatedAt;
         this.completedAt = completedAt;
@@ -62,12 +62,12 @@ public class Task {
         this.id = id;
     }
 
-    public String getTipTask() {
-        return tipTask;
+    public String getTypeTask() {
+        return typeTask;
     }
 
-    public void setTipTask(String tipTask) {
-        this.tipTask = tipTask;
+    public void setTypeTask(String typeTask) {
+        this.typeTask = typeTask;
     }
 
     public String getName() {
@@ -78,20 +78,20 @@ public class Task {
         this.name = name;
     }
 
-    public String getDurataLimita() {
-        return durataLimita;
+    public String getTimeLimit() {
+        return timeLimit;
     }
 
-    public void setDurataLimita(String durataLimita) {
-        this.durataLimita = durataLimita;
+    public void setTimeLimit(String timeLimit) {
+        this.timeLimit = timeLimit;
     }
 
-    public String getDurataEstimata() {
-        return durataEstimata;
+    public String getEstimatedTime() {
+        return estimatedTime;
     }
 
-    public void setDurataEstimata(String durataEstimata) {
-        this.durataEstimata = durataEstimata;
+    public void setEstimatedTime(String estimatedTime) {
+        this.estimatedTime = estimatedTime;
     }
 
     public int getNumberOfDaysRemaining() {
@@ -138,10 +138,10 @@ public class Task {
     public String toString() {
         return "Task{" +
                 "id=" + id +
-                ", tipTask='" + tipTask + '\'' +
+                ", typeTask='" + typeTask + '\'' +
                 ", name='" + name + '\'' +
-                ", durataLimita='" + durataLimita + '\'' +
-                ", durataEstimata='" + durataEstimata + '\'' +
+                ", timeLimit='" + timeLimit + '\'' +
+                ", estimatedTime='" + estimatedTime + '\'' +
                 ", numberOfDaysRemaining=" + numberOfDaysRemaining +
                 ", taskCreatedAt=" + taskCreatedAt +
                 ", completedAt=" + completedAt +

@@ -1,31 +1,31 @@
 package com.example.altamirabe.dto;
 
 public class TaskDto {
-    private String tipTask;
+    private String typeTask;
 
     private String name;
 
-    private String durataLimita;
+    private String timeLimit;
 
-    private String durataEstimata;
+    private String estimatedTime;
 
 
-    public TaskDto(String tipTask, String name, String durataLimita, String durataEstimata) {
-        this.tipTask = tipTask;
+    public TaskDto(String typeTask, String name, String timeLimit, String estimatedTime) {
+        this.typeTask = typeTask;
         this.name = name;
-        this.durataLimita = durataLimita;
-        this.durataEstimata = durataEstimata;
+        this.timeLimit = timeLimit;
+        this.estimatedTime = estimatedTime;
     }
 
     public TaskDto() {
     }
 
-    public String getTipTask() {
-        return tipTask;
+    public String getTypeTask() {
+        return typeTask;
     }
 
-    public void setTipTask(String tipTask) {
-        this.tipTask = tipTask;
+    public void setTypeTask(String typeTask) {
+        this.typeTask = typeTask;
     }
 
     public String getName() {
@@ -36,29 +36,29 @@ public class TaskDto {
         this.name = name;
     }
 
-    public String getDurataLimita() {
-        return durataLimita;
+    public String getTimeLimit() {
+        return timeLimit;
     }
 
-    public void setDurataLimita(String durataLimita) {
-        this.durataLimita = durataLimita;
+    public void setTimeLimit(String timeLimit) {
+        this.timeLimit = timeLimit;
     }
 
-    public String getDurataEstimata() {
-        return durataEstimata;
+    public String getEstimatedTime() {
+        return estimatedTime;
     }
 
-    public void setDurataEstimata(String durataEstimata) {
-        this.durataEstimata = durataEstimata;
+    public void setEstimatedTime(String estimatedTime) {
+        this.estimatedTime = estimatedTime;
     }
 
     @Override
     public String toString() {
         return "TaskDto{" +
-                "tipTask='" + tipTask + '\'' +
+                "typeTask='" + typeTask + '\'' +
                 ", name='" + name + '\'' +
-                ", durataLimita='" + durataLimita + '\'' +
-                ", durataEstimata='" + durataEstimata + '\'' +
+                ", timeLimit='" + timeLimit + '\'' +
+                ", estimatedTime='" + estimatedTime + '\'' +
                 '}';
     }
 }
